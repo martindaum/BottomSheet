@@ -119,7 +119,6 @@ internal struct BottomSheetView<hContent: View, mContent: View, bottomSheetPosit
                                 }
                             }
                     )
-                    .padding(.horizontal)
                     .padding(.top, !self.options.notResizeable && !self.options.noDragIndicator ? 0 : 20)
                     .padding(.bottom, self.headerContentPadding(geometry: geometry))
                 }
