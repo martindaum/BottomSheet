@@ -119,8 +119,6 @@ internal struct BottomSheetView<hContent: View, mContent: View, bottomSheetPosit
                                 }
                             }
                     )
-                    .padding(.top, !self.options.notResizeable && !self.options.noDragIndicator ? 0 : 20)
-                    .padding(.bottom, self.headerContentPadding(geometry: geometry))
                 }
                 
                 Group {
@@ -215,18 +213,6 @@ internal struct BottomSheetView<hContent: View, mContent: View, bottomSheetPosit
                 } else {
                     return Double((self.bottomSheetPosition.rawValue * geometry.size.height - self.translation) / geometry.size.height)
                 }
-            } else {
-                return 0
-            }
-        }
-    }
-    
-    private func headerContentPadding(geometry: GeometryProxy) -> CGFloat {
-        withAnimation(self.options.animation) {
-            if self.isBottomPosition {
-                return geometry.safeAreaInsets.bottom + 25
-            } else if self.headerContent == nil {
-                return 20
             } else {
                 return 0
             }
